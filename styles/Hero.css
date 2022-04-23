@@ -1,11 +1,11 @@
 #showcase {
   position: relative;
   background: url(../public/img/mountains.jpg);
-  min-height: 110vh;
+  height: 500px;
   background-repeat: no-repeat;
 }
 #showcase .primary-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
   background: rgba(50, 146, 166, 0.6);
   position: absolute;
   top: 0;
@@ -30,51 +30,3 @@
   color: #bbb;
 }
 
-.steps-section {
-  border-radius: 50%;
-  background-color: blue;
-}
-.hero-req-circle {
-  height: 170px;
-  width: 175px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  padding: 10px;
-}
-.circle-one {
-  background-color: #fff;
-}
-.circle-two {
-  background-color: #558ef6;
-}
-.circle-three {
-  background-color: #f4924c;
-}
-
-@media (min-width: 576px) {
-  #showcase {
-    position: relative;
-    background: url(../public/img/mountains.jpg);
-    min-height: 90vh;
-    background-repeat: no-repeat;
-  }
-  /* // Medium devices (tablets, 768px and up)
-   */
-  @media (min-width: 768px) {
-    #showcase {
-      position: relative;
-      background: url(../public/img/mountains.jpg);
-      min-height: 60vh;
-      background-repeat: no-repeat;
-    }
-    @media (min-width: 992px) {
-      #showcase {
-        position: relative;
-        background: url(../public/img/mountains.jpg);
-        min-height: 110vh;
-        background-repeat: no-repeat;
-      }
-    }
-  }
-}

@@ -1,11 +1,13 @@
+import EasySteps from "../components/EasySteps";
 import Hero from "../components/Hero";
-import Packages from "../components/Packages";
+import PopularPlaces from "../components/PopularPlaces";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Packages />
+      <EasySteps />
+      <PopularPlaces />
     </>
   );
 }

@@ -1,5 +1,5 @@
 body {
-  margin-top: 8rem;
+  margin-top: 96px;
 }
 .custom-primary-btn {
   color: #fff;
@@ -12,6 +12,21 @@ body {
 .text-spacing-two {
   letter-spacing: 4px;
 }
+.text-spacing-three {
+  letter-spacing: 2px;
+}
 .custom-primary-text {
   color: #e08e2b;
+}
+.custom-primary-text-two {
+  color: #874c04;
+}
+.bg-custom-dark {
+  background: rgb(238, 186, 120);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 186, 120, 1) 0%,
+    rgba(241, 185, 117, 1) 0%,
+    rgba(155, 230, 245, 1) 100%
+  );
 }

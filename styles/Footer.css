@@ -1,0 +1,13 @@
+.footer-section {
+  background: rgb(236, 178, 102);
+}
+a {
+  color: aliceblue;
+}
+a:hover {
+  color: rgb(167, 101, 15)
+}
+.bg-footer{
+    background: rgb(224, 159, 75);
+}
+

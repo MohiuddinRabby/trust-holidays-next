@@ -4,7 +4,7 @@ import HeaderLogo from "../public/img/headerLogo.gif";
 import Link from "next/link";
 const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg fixed-top py-4">
+    <nav className="navbar navbar-expand-lg fixed-top py-2">
       <div className="container">
         <Image
           src={HeaderLogo}
