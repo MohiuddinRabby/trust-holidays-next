@@ -1,0 +1,19 @@
+nav {
+  background: #d99037;
+}
+.navbar {
+  box-shadow: 2px 2px 5px #d99037;
+  opacity: 0.8;
+  background: #fff;
+}
+.navbar .nav-item {
+  font-size: 1.35rem;
+  padding-right: 1.4rem;
+}
+.navbar .nav-item a {
+  color: #000;
+}
+.navbar .nav-item a:hover {
+  color: #d99037;
+  transition: all 0.2s ease-in-out;
+}

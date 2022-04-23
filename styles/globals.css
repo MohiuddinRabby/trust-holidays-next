@@ -1,16 +1,17 @@
-html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  margin-top: 8rem;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
+.custom-primary-btn {
+  color: #fff;
+  background-color: #f3941e;
+  border-color: #f3941e;
 }
-
-* {
-  box-sizing: border-box;
+.text-spacing-one {
+  letter-spacing: 7px;
+}
+.text-spacing-two {
+  letter-spacing: 4px;
+}
+.custom-primary-text {
+  color: #e08e2b;
 }
