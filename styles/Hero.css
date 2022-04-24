@@ -1,7 +1,7 @@
 #showcase {
   position: relative;
-  background: url(../public/img/mountains.jpg);
-  height: 500px;
+  background: url(../public/img/hero-bg-2.jpg);
+  min-height: 500px;
   background-repeat: no-repeat;
 }
 #showcase .primary-overlay {
@@ -29,4 +29,21 @@
   font-weight: bold;
   color: #bbb;
 }
-
+/* popular places */
+.popular-places img {
+  max-width: 100%;
+  transition: all 0.3s;
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+}
+.popular-places img:hover {
+  transform: scale(1.1);
+}
+/* mobile view */
+@media (max-width: 400px) {
+  .popular-places {
+    padding-top: 90px;
+  }
+}

@@ -1,5 +1,6 @@
 body {
   margin-top: 96px;
+  font-family: "Roboto", sans-serif;
 }
 .custom-primary-btn {
   color: #fff;
@@ -29,4 +30,8 @@ body {
     rgba(241, 185, 117, 1) 0%,
     rgba(155, 230, 245, 1) 100%
   );
+}
+/* */
+.styled-header{
+  font-family: 'Oswald', sans-serif;
 }
