@@ -20,7 +20,16 @@ const Footer = () => {
                     <p className="text-spacing-three">r-03/ h-28/b</p>
                   </div>
                   <div className="d-flex justify-content-center">
-                    <i className="fa-brands fa-facebook fa-2x text-primary pr-4"></i>
+                    <a
+                      href="https://www.facebook.com/TrustHolidays/"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      <i
+                        className="fa-brands fa-facebook fa-2x text-primary pr-4"
+                        style={{ cursor: "pointer" }}
+                      ></i>
+                    </a>
                     <i className="fa-brands fa-youtube fa-2x text-danger pr-4"></i>
                     <i className="fa-brands fa-whatsapp fa-2x text-success"></i>
                   </div>

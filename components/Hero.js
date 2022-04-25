@@ -126,7 +126,8 @@ const Hero = () => {
                                 <Field
                                   className="form-control"
                                   name="citizenOf"
-                                  value={values?.citizenOf}
+                                  value={values?.citizenOf} 
+                                  disabled={true}
                                 />
                               </div>
                               <div className="col-lg-4">
