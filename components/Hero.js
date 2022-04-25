@@ -3,7 +3,7 @@ import { Formik, Form } from "formik";
 import Select from "react-select";
 import visaCategoryList from "../public/data/visaCategoryList";
 import * as Yup from "yup";
-import { Fade, Slide } from "react-awesome-reveal";
+import { Bounce, Fade, Slide, Zoom } from "react-awesome-reveal";
 import MaldivesImg from "../public/img/popular-places/popular-destination-1.png";
 import DubaiImg from "../public/img/popular-places/popular-destination-2.png";
 import SajekImg from "../public/img/popular-places/popular-destination-3.png";
@@ -37,40 +37,48 @@ const Hero = () => {
           <div className="container-fluid">
             <div className="row py-5">
               <div className="col-lg-4 d-none d-lg-block text-white">
-                <h2 className="text-capitalize text-center pb-4 styled-header text-white">
-                  <strong>3</strong> easy steps for
-                  <strong className="text-uppercase"> visa</strong>
-                </h2>
-                <div className="text-center pb-3">
-                  {/* <i className="fa-solid fa-file-circle-check fa-3x"></i> */}
-                  <Image
-                    src={OnlineApplication}
-                    alt="online application"
-                    width={70}
-                    height={70}
-                  />
-                  <h4 className="">Complete online application form</h4>
-                </div>
-                <div className="text-center pb-3">
-                  {/* <i className="fa-solid fa-file-invoice fa-3x"></i> */}
-                  <Image
-                    src={Payment}
-                    alt="online application"
-                    width={70}
-                    height={70}
-                  />
-                  <h4 className="">Make payment & provide documents</h4>
-                </div>
-                <div className="text-center">
-                  {/* <i className="fa-solid fa-passport fa-3x"></i> */}
-                  <Image
-                    src={VisaImg}
-                    alt="online application"
-                    width={70}
-                    height={70}
-                  />
-                  <h4 className="">Receive your desired visa</h4>
-                </div>
+                <Bounce duration={2000}>
+                  <h2 className="text-capitalize text-center pb-4 styled-header text-white">
+                    <strong>3</strong> easy steps for
+                    <strong className="text-uppercase"> visa</strong>
+                  </h2>
+                </Bounce>
+                <Zoom duration={2000}>
+                  <div className="text-center pb-3">
+                    {/* <i className="fa-solid fa-file-circle-check fa-3x"></i> */}
+                    <Image
+                      src={OnlineApplication}
+                      alt="online application"
+                      width={70}
+                      height={70}
+                    />
+                    <h4 className="">Complete online application form</h4>
+                  </div>
+                </Zoom>
+                <Zoom duration={2000}>
+                  <div className="text-center pb-3">
+                    {/* <i className="fa-solid fa-file-invoice fa-3x"></i> */}
+                    <Image
+                      src={Payment}
+                      alt="online application"
+                      width={70}
+                      height={70}
+                    />
+                    <h4 className="">Make payment & provide documents</h4>
+                  </div>
+                </Zoom>
+                <Zoom duration={2000}>
+                  <div className="text-center">
+                    {/* <i className="fa-solid fa-passport fa-3x"></i> */}
+                    <Image
+                      src={VisaImg}
+                      alt="online application"
+                      width={70}
+                      height={70}
+                    />
+                    <h4 className="">Receive your desired visa</h4>
+                  </div>
+                </Zoom>
               </div>
               <div className="col-lg-8 py-2">
                 <div className="hero-requirement-form text-white">
@@ -79,7 +87,9 @@ const Hero = () => {
                       Trust Holidays - Your Trusted Travel Partner
                     </h2>
                     <h3 className="text-spacing-three">Need A Visa ?</h3>
-                    <p className="text-spacing-three">Please Check Requirements Here</p>
+                    <p className="text-spacing-three">
+                      Please Check Requirements Here
+                    </p>
                   </div>
                   <Formik
                     validationSchema={validationSchema}

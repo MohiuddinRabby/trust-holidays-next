@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <div className="footer-section py-5">
-        <Fade duration={3000}>
+        <Fade duration={2000}>
           <div className="container">
             <div className="row">
               <div className="col-lg-3 col-md-12 col-sm-0 text-uppercase text-white font-weight-bold border-right text-center">
@@ -105,7 +105,7 @@ const Footer = () => {
           </div>
         </Fade>
       </div>
-      <Fade duration={1000}>
+      <Fade duration={2000}>
         <div className="container-fluid bg-footer py-2 text-capitalize text-white text-spacing-three">
           <div className="row">
             <div className="col-lg-12 col-md-12 col-sm-12 text-center space-texts-two">
