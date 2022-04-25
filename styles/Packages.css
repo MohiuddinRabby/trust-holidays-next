@@ -1,0 +1,31 @@
+.packages {
+  min-height: 670px;
+}
+.package-overlay {
+  min-height: 300px;
+  width: 100%;
+}
+.pack-img {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.package-cards .card {
+  max-width: 100%;
+  transition: all 0.3s;
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+}
+.package-cards .card .card-body {
+    background: rgb(238, 186, 120);
+  background: linear-gradient(
+    90deg,
+    rgba(238, 186, 120, 1) 0%,
+    rgba(241, 185, 117, 1) 0%,
+    rgba(155, 230, 245, 1) 100%
+  );
+}
+.package-cards .card:hover {
+  transform: scale(1.1);
+}

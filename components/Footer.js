@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Fade } from "react-awesome-reveal";
-import FooterLogo from "../public/img/footer/nav-logo.png";
+import FooterLogo from "../public/img/footer/footer-logo.png";
 const Footer = () => {
   return (
     <>
@@ -28,7 +28,7 @@ const Footer = () => {
               </div>
               <div className="col-lg-3 col-md-3 col-sm-0 border-right text-uppercase d-none d-lg-block d-xl-block">
                 <h6 className="custom-primary-text-two font-weight-bold text-spacing-three pb-3 border-bottom">
-                  Location
+                  Service we provide
                 </h6>
                 <div className="row text-light">
                   <div className="col-md-4">

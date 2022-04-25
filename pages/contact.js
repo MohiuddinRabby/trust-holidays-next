@@ -24,7 +24,7 @@ const contact = () => {
           </h4>
         </Fade>
         <div className="row py-5">
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <h5 className="font-weight-bold text-white">
               Corporate Office Address
             </h5>
@@ -34,7 +34,7 @@ const contact = () => {
               <h6>Bangladesh</h6>
             </Fade>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <h5 className="font-weight-bold text-white">Contact</h5>
             <h5>For visa information/processing</h5>
             <Fade duration={2000}>
@@ -50,7 +50,7 @@ const contact = () => {
               <h6>01315 302351</h6>
             </Fade>
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-4 col-md-6">
             <h5 className="font-weight-bold text-white">Follow us</h5>
             <Fade duration={2000}>
               <iframe

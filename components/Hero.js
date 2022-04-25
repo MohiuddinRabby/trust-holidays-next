@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Formik, Form } from "formik";
+import { Formik, Form, Field } from "formik";
 import Select from "react-select";
 import visaCategoryList from "../public/data/visaCategoryList";
 import * as Yup from "yup";
-import { Bounce, Fade, Slide, Zoom } from "react-awesome-reveal";
+import { Bounce, Fade, Zoom } from "react-awesome-reveal";
 import MaldivesImg from "../public/img/popular-places/popular-destination-1.png";
 import DubaiImg from "../public/img/popular-places/popular-destination-2.png";
 import SajekImg from "../public/img/popular-places/popular-destination-3.png";
@@ -12,14 +12,15 @@ import Image from "next/image";
 import OnlineApplication from "../public/img/steps-for-visa/online-application.png";
 import Payment from "../public/img/steps-for-visa/payment.png";
 import VisaImg from "../public/img/steps-for-visa/visa.png";
+import { useRouter } from "next/router";
 const validationSchema = Yup.object().shape({
   visaCategory: Yup.object().shape({
-    label: Yup.string().required("required"),
     value: Yup.string().required("required"),
+    label: Yup.string().required("required"),
   }),
 });
 const initialValues = {
-  citizenOf: "",
+  citizenOf: "Bangladesh",
   visaCategory: "",
 };
 const Hero = () => {
@@ -30,6 +31,9 @@ const Hero = () => {
       color: state.isSelected ? "yellow" : "#000",
     }),
   };
+  // router
+  const router = useRouter();
+  const selectedCitizenOf = { value: 1, label: "Bangladesh" };
   return (
     <>
       <section id="showcase">
@@ -95,7 +99,13 @@ const Hero = () => {
                     validationSchema={validationSchema}
                     initialValues={initialValues}
                     onSubmit={(values, { setSubmitting, resetForm }) => {
-                      setItemsTrue();
+                      router.push({
+                        pathname: "/requirementDetails",
+                        query: {
+                          citizenOf: "Bangladesh",
+                          visaCategory: values?.visaCategory?.label,
+                        },
+                      });
                       resetForm();
                     }}
                   >
@@ -113,13 +123,9 @@ const Hero = () => {
                             <div className="row">
                               <div className="col-lg-4">
                                 <label>I am a citizen of</label>
-                                <Select
+                                <Field
+                                  className="form-control"
                                   name="citizenOf"
-                                  styles={customStyles}
-                                  onChange={(valueOption) => {
-                                    setFieldValue("citizenOf", valueOption);
-                                  }}
-                                  options={[{ value: 1, label: "Bangladesh" }]}
                                   value={values?.citizenOf}
                                 />
                               </div>
@@ -139,6 +145,7 @@ const Hero = () => {
                                 <label>Visa Category</label>
                                 <Select
                                   name="visaCategory"
+                                  styles={customStyles}
                                   onChange={(valueOption) => {
                                     setFieldValue("visaCategory", valueOption);
                                   }}
@@ -210,8 +217,8 @@ const Hero = () => {
                 />
                 <h5 className="mt-3 font-weight-bold">dubai</h5>
                 <p className="lead">
-                  paradise island
-                  <span className="text-yellow">/ 5 days - 4 nights</span>
+                  dubai city
+                  <span className="text-yellow">/ 5 days</span>
                 </p>
                 <div className="d-flex justify-content-center">
                   <div className="align-self-start px-2">
@@ -237,10 +244,10 @@ const Hero = () => {
                   src={SajekImg}
                   alt="destination maldives"
                 />
-                <h5 className="mt-3 font-weight-bold">sajek</h5>
+                <h5 className="mt-3 font-weight-bold">Turkey</h5>
                 <p className="lead">
-                  paradise island
-                  <span className="text-yellow">/ 5 days - 4 nights</span>
+                  Istanbul, Bursa
+                  <span className="text-yellow">/ 5 days</span>
                 </p>
                 <div className="d-flex justify-content-center">
                   <div className="align-self-start px-2">
@@ -251,7 +258,7 @@ const Hero = () => {
                     />
                   </div>
                   <div className="mt-1 align-self-end text-yellow font-weight-bold">
-                    6,500 /-
+                    95,900 /-
                   </div>
                 </div>
                 <div className="py-2">
