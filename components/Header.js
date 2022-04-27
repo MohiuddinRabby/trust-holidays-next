@@ -6,13 +6,15 @@ const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg fixed-top py-2">
       <div className="container">
-        <Image
-          src={HeaderLogo}
-          // src="/../public/img/headerLogo.gif"
-          alt="Picture of the author"
-          width={200}
-          height={80}
-        />
+        <Link href="/" passHref>
+          <Image
+            src={HeaderLogo}
+            alt="Trust Holidays"
+            width={190}
+            height={80}
+            style={{ cursor: "pointer" }}
+          />
+        </Link>
 
         <button
           className="navbar-toggler"

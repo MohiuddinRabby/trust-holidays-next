@@ -15,8 +15,8 @@ import VisaImg from "../public/img/steps-for-visa/visa.png";
 import { useRouter } from "next/router";
 const validationSchema = Yup.object().shape({
   visaCategory: Yup.object().shape({
-    value: Yup.string().required("required"),
-    label: Yup.string().required("required"),
+    value: Yup.string().required("please select value"),
+    label: Yup.string().required("please select value"),
   }),
 });
 const initialValues = {
@@ -25,6 +25,7 @@ const initialValues = {
 };
 const Hero = () => {
   const [visaCategory, setVisaCategory] = useState(visaCategoryList);
+  // custom style for react-select values color
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -33,6 +34,7 @@ const Hero = () => {
   };
   // router
   const router = useRouter();
+  // selected country as Bangladesh
   const selectedCitizenOf = { value: 1, label: "Bangladesh" };
   return (
     <>
@@ -126,7 +128,7 @@ const Hero = () => {
                                 <Field
                                   className="form-control"
                                   name="citizenOf"
-                                  value={values?.citizenOf} 
+                                  value={values?.citizenOf}
                                   disabled={true}
                                 />
                               </div>
@@ -140,6 +142,7 @@ const Hero = () => {
                                   }}
                                   value={values?.visaCategory}
                                   options={visaCategory}
+                                  errors={errors}
                                 />
                               </div>
                               <div className="col-lg-4">

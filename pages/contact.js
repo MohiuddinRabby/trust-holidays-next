@@ -1,7 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import ContactImgOne from "../public/img/contact-us/contact-img-1.png";
-import ContactImgTwo from "../public/img/contact-us/contact-img-2.png";
 import { Fade } from "react-awesome-reveal";
 const contact = () => {
   return (
