@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import Select from "react-select";
 import visaCategoryList from "../public/data/visaCategoryList";
@@ -13,6 +13,7 @@ import OnlineApplication from "../public/img/steps-for-visa/online-application.p
 import Payment from "../public/img/steps-for-visa/payment.png";
 import VisaImg from "../public/img/steps-for-visa/visa.png";
 import { useRouter } from "next/router";
+import { getCountries } from "../pages/api/trustApis";
 const validationSchema = Yup.object().shape({
   visaCategory: Yup.object().shape({
     value: Yup.string().required("please select value"),
@@ -25,6 +26,9 @@ const initialValues = {
 };
 const Hero = () => {
   const [visaCategory, setVisaCategory] = useState(visaCategoryList);
+  // country api state
+  const [countryList, setCountry] = useState();
+  console.log("countrylist", countryList);
   // custom style for react-select values color
   const customStyles = {
     option: (provided, state) => ({
@@ -36,6 +40,9 @@ const Hero = () => {
   const router = useRouter();
   // selected country as Bangladesh
   const selectedCitizenOf = { value: 1, label: "Bangladesh" };
+  useEffect(() => {
+    getCountries(setCountry);
+  }, []);
   return (
     <>
       <section id="showcase">
@@ -46,7 +53,10 @@ const Hero = () => {
                 <Bounce duration={2000}>
                   <h2 className="text-capitalize text-center pb-4 styled-header text-white">
                     <strong>3</strong> easy steps for
-                    <strong className="text-uppercase"> visa</strong>
+                    <strong className="text-uppercase text-spacing-three">
+                      {" "}
+                      visa
+                    </strong>
                   </h2>
                 </Bounce>
                 <Zoom duration={2000}>
@@ -143,6 +153,7 @@ const Hero = () => {
                                   value={values?.visaCategory}
                                   options={visaCategory}
                                   errors={errors}
+                                  placeholder="Select Country"
                                 />
                               </div>
                               <div className="col-lg-4">
@@ -155,6 +166,7 @@ const Hero = () => {
                                   }}
                                   value={values?.visaCategory}
                                   options={visaCategory}
+                                  placeholder="Select Visa Category"
                                 />
                               </div>
                             </div>
