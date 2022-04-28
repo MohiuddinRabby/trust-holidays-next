@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import Select from "react-select";
-import visaCategoryList from "../public/data/visaCategoryList";
 import * as Yup from "yup";
 import { Bounce, Fade, Zoom } from "react-awesome-reveal";
 import MaldivesImg from "../public/img/popular-places/popular-destination-1.png";
@@ -13,7 +12,11 @@ import OnlineApplication from "../public/img/steps-for-visa/online-application.p
 import Payment from "../public/img/steps-for-visa/payment.png";
 import VisaImg from "../public/img/steps-for-visa/visa.png";
 import { useRouter } from "next/router";
-import { getCountries } from "../pages/api/trustApis";
+import {
+  getCountries,
+  getGridData,
+  getVisaCategories,
+} from "../pages/api/trustApis";
 const validationSchema = Yup.object().shape({
   visaCategory: Yup.object().shape({
     value: Yup.string().required("please select value"),
@@ -22,13 +25,15 @@ const validationSchema = Yup.object().shape({
 });
 const initialValues = {
   citizenOf: "Bangladesh",
+  countryName: "",
   visaCategory: "",
 };
 const Hero = () => {
-  const [visaCategory, setVisaCategory] = useState(visaCategoryList);
   // country api state
   const [countryList, setCountry] = useState();
-  console.log("countrylist", countryList);
+  // visa category api state
+  const [visaCategories, setVisaCategories] = useState();
+
   // custom style for react-select values color
   const customStyles = {
     option: (provided, state) => ({
@@ -42,7 +47,10 @@ const Hero = () => {
   const selectedCitizenOf = { value: 1, label: "Bangladesh" };
   useEffect(() => {
     getCountries(setCountry);
+    getVisaCategories(setVisaCategories);
   }, []);
+  console.log("countryList", countryList);
+  console.log("visacategorylist", visaCategories);
   return (
     <>
       <section id="showcase">
@@ -115,7 +123,10 @@ const Hero = () => {
                         pathname: "/requirementDetails",
                         query: {
                           citizenOf: "Bangladesh",
-                          visaCategory: values?.visaCategory?.label,
+                          countryID: values?.countryName?.value,
+                          countryName: values?.countryName?.label,
+                          visaCategoryID: values?.visaCategory?.value,
+                          visaCategoryName: values?.visaCategory?.label,
                         },
                       });
                       resetForm();
@@ -145,13 +156,13 @@ const Hero = () => {
                               <div className="col-lg-4">
                                 <label>Choose Destination</label>
                                 <Select
-                                  name="visaCategory"
+                                  name="countryName"
                                   styles={customStyles}
                                   onChange={(valueOption) => {
-                                    setFieldValue("visaCategory", valueOption);
+                                    setFieldValue("countryName", valueOption);
                                   }}
-                                  value={values?.visaCategory}
-                                  options={visaCategory}
+                                  value={values?.countryName}
+                                  options={countryList}
                                   errors={errors}
                                   placeholder="Select Country"
                                 />
@@ -165,7 +176,7 @@ const Hero = () => {
                                     setFieldValue("visaCategory", valueOption);
                                   }}
                                   value={values?.visaCategory}
-                                  options={visaCategory}
+                                  options={visaCategories}
                                   placeholder="Select Visa Category"
                                 />
                               </div>

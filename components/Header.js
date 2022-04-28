@@ -10,8 +10,8 @@ const Header = () => {
           <Image
             src={HeaderLogo}
             alt="Trust Holidays"
-            width={190}
-            height={80}
+            width={180}
+            height={100}
             style={{ cursor: "pointer" }}
           />
         </Link>
