@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import HeaderLogo from "../public/img/headerLogo.gif";
 import Link from "next/link";
+import UmrahPopUp from "./UmrahPopUp";
 const Header = () => {
+  // umrah pop states
+  const [umrahBtnPopup, setUmrahBtnPopup] = useState(false);
+  const [umrahPopupTimer, setUmrahPopupTimer] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setUmrahPopupTimer(true);
+    }, 2000);
+  }, []);
   return (
     <nav className="navbar navbar-expand-lg fixed-top py-2">
       <div className="container">
@@ -48,6 +57,12 @@ const Header = () => {
               </Link>
             </li>
           </ul>
+          <button
+            onClick={() => setUmrahBtnPopup(true)}
+            className="btn custom-primary-btn my-2 my-sm-0 mx-2"
+          >
+            Umrah Special
+          </button>
           <div className="">
             <button
               className="btn custom-primary-btn my-2 my-sm-0"
@@ -55,6 +70,23 @@ const Header = () => {
             >
               Login / Signup
             </button>
+            <UmrahPopUp trigger={umrahBtnPopup} setTrigger={setUmrahBtnPopup}>
+              <p className="text-white py-5">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+                delectus repellat officia similique sunt perspiciatis saepe
+                accusantium dolorem placeat quae.
+              </p>
+            </UmrahPopUp>
+            <UmrahPopUp
+              trigger={umrahPopupTimer}
+              setTrigger={setUmrahPopupTimer}
+            >
+              <p className="text-white py-5">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+                delectus repellat officia similique sunt perspiciatis saepe
+                accusantium dolorem placeat quae.
+              </p>
+            </UmrahPopUp>
           </div>
         </div>
       </div>

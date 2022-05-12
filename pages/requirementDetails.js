@@ -5,7 +5,6 @@ const RequirementDetails = () => {
   const router = useRouter();
   // grid data api state
   const [gridData, setGridData] = useState();
-  console.log(gridData);
   useEffect(() => {
     getGridData(
       router?.query?.countryID,

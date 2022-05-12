@@ -18,7 +18,7 @@
   transform: scale(1);
 }
 .package-cards .card .card-body {
-    background: rgb(238, 186, 120);
+  background: rgb(238, 186, 120);
   background: linear-gradient(
     90deg,
     rgba(238, 186, 120, 1) 0%,

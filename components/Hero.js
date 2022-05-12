@@ -12,11 +12,8 @@ import OnlineApplication from "../public/img/steps-for-visa/online-application.p
 import Payment from "../public/img/steps-for-visa/payment.png";
 import VisaImg from "../public/img/steps-for-visa/visa.png";
 import { useRouter } from "next/router";
-import {
-  getCountries,
-  getGridData,
-  getVisaCategories,
-} from "../pages/api/trustApis";
+import { getCountries, getVisaCategories } from "../pages/api/trustApis";
+import UmrahPopUp from "./UmrahPopUp";
 const validationSchema = Yup.object().shape({
   visaCategory: Yup.object().shape({
     value: Yup.string().required("please select value"),
@@ -33,7 +30,6 @@ const Hero = () => {
   const [countryList, setCountry] = useState();
   // visa category api state
   const [visaCategories, setVisaCategories] = useState();
-
   // custom style for react-select values color
   const customStyles = {
     option: (provided, state) => ({
@@ -49,8 +45,6 @@ const Hero = () => {
     getCountries(setCountry);
     getVisaCategories(setVisaCategories);
   }, []);
-  console.log("countryList", countryList);
-  console.log("visacategorylist", visaCategories);
   return (
     <>
       <section id="showcase">
