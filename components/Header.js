@@ -57,12 +57,12 @@ const Header = () => {
               </Link>
             </li>
           </ul>
-          <button
+          {/* <button
             onClick={() => setUmrahBtnPopup(true)}
             className="btn custom-primary-btn my-2 my-sm-0 mx-2"
           >
             Umrah Special
-          </button>
+          </button> */}
           <div className="">
             <button
               className="btn custom-primary-btn my-2 my-sm-0"

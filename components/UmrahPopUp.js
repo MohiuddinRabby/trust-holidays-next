@@ -1,5 +1,4 @@
 import React from "react";
-import { Bounce } from "react-awesome-reveal";
 function UmrahPopUp(props) {
   return props.trigger ? (
     <div className="popup">
