@@ -221,11 +221,13 @@ const Hero = () => {
                     />
                   </div>
                   <div className="mt-1 align-self-end text-yellow font-weight-bold">
-                    49,000 /-
+                    <h4>49,000 /-</h4>
                   </div>
                 </div>
-                <div className="py-2">
-                  <button className="btn custom-primary-btn">Book Now</button>
+                <div className="py-3">
+                  <button className="btn custom-primary-btn text-spacing-three font-weight-bold">
+                    Book Now
+                  </button>
                 </div>
               </Fade>
             </div>
@@ -250,11 +252,13 @@ const Hero = () => {
                     />
                   </div>
                   <div className="mt-1 align-self-end text-yellow font-weight-bold">
-                    59,500 /-
+                    <h4>59,500 /-</h4>
                   </div>
                 </div>
-                <div className="py-2">
-                  <button className="btn custom-primary-btn">Book Now</button>
+                <div className="py-3">
+                  <button className="btn custom-primary-btn text-spacing-three font-weight-bold">
+                    Book Now
+                  </button>
                 </div>
               </Fade>
             </div>
@@ -279,11 +283,13 @@ const Hero = () => {
                     />
                   </div>
                   <div className="mt-1 align-self-end text-yellow font-weight-bold">
-                    95,900 /-
+                    <h4>95,900 /-</h4>
                   </div>
                 </div>
-                <div className="py-2">
-                  <button className="btn custom-primary-btn">Book Now</button>
+                <div className="py-3">
+                  <button className="btn custom-primary-btn text-spacing-three font-weight-bold">
+                    Book Now
+                  </button>
                 </div>
               </Fade>
             </div>
