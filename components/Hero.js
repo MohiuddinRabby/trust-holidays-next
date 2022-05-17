@@ -13,7 +13,6 @@ import Payment from "../public/img/steps-for-visa/payment.png";
 import VisaImg from "../public/img/steps-for-visa/visa.png";
 import { useRouter } from "next/router";
 import { getCountries, getVisaCategories } from "../pages/api/trustApis";
-import UmrahPopUp from "./UmrahPopUp";
 const validationSchema = Yup.object().shape({
   visaCategory: Yup.object().shape({
     value: Yup.string().required("please select value"),
@@ -56,8 +55,7 @@ const Hero = () => {
                   <h2 className="text-capitalize text-center pb-4 styled-header text-white">
                     <strong>3</strong> easy steps for
                     <strong className="text-uppercase text-spacing-three">
-                      {" "}
-                      visa
+                      &nbsp;visa
                     </strong>
                   </h2>
                 </Bounce>
