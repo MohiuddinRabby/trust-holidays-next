@@ -120,6 +120,8 @@ const Hero = () => {
                       router.push({
                         pathname: "/requirementDetails",
                         query: {
+                          citizenID: values?.citizenOf?.value,
+                          citizenOf: values?.citizenOf?.label,
                           countryID: values?.countryName?.value,
                           countryName: values?.countryName?.label,
                           visaCategoryID: values?.visaCategory?.value,

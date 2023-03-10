@@ -5,13 +5,19 @@ const RequirementDetails = () => {
   const router = useRouter();
   // grid data api state
   const [gridData, setGridData] = useState();
+  console.log("gridData", gridData);
   useEffect(() => {
     getGridData(
+      router?.query?.citizenID,
       router?.query?.countryID,
       router?.query?.visaCategoryID,
       setGridData
     );
-  }, [router?.query?.countryID, router?.query?.visaCategoryID]);
+  }, [
+    router?.query?.citizenID,
+    router?.query?.countryID,
+    router?.query?.visaCategoryID,
+  ]);
   const backToHome = () => {
     router.push("/");
   };

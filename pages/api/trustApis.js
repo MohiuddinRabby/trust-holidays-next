@@ -41,20 +41,24 @@ export const getVisaCategories = async (setter) => {
       });
       setter(newData);
     }
-    console.log(res);
   } catch (error) {
     console.log(error.message);
   }
 };
 
-export const getGridData = async (countryID, visaCategoryID, setter) => {
+export const getGridData = async (
+  citizenID,
+  countryID,
+  visaCategoryID,
+  setter
+) => {
   try {
     const res = await Axios.get(
-      `http://198.187.30.144/api/VisaInfo/${countryID}/${visaCategoryID}`
+      `http://104.237.6.187/api/v1/visa/visa-content?citizenCountry_id=${citizenID}&travelCountry_id=${countryID}&visaCategory_id=${visaCategoryID}`
     );
 
     if (res.status === 200 && res?.data) {
-      setter(res?.data);
+      setter(res?.data?.results);
     }
   } catch (error) {
     console.log(error.message);

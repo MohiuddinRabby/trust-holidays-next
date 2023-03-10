@@ -5,13 +5,13 @@ import Link from "next/link";
 import UmrahPopUp from "./UmrahPopUp";
 const Header = () => {
   // umrah pop states
-  const [umrahBtnPopup, setUmrahBtnPopup] = useState(false);
-  const [umrahPopupTimer, setUmrahPopupTimer] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setUmrahPopupTimer(true);
-    }, 2000);
-  }, []);
+  // const [umrahBtnPopup, setUmrahBtnPopup] = useState(false);
+  // const [umrahPopupTimer, setUmrahPopupTimer] = useState(false);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setUmrahPopupTimer(true);
+  //   }, 2000);
+  // }, []);
   return (
     <nav className="navbar navbar-expand-lg fixed-top py-2">
       <div className="container">
@@ -70,7 +70,7 @@ const Header = () => {
             >
               Login / Signup
             </button>
-            <UmrahPopUp trigger={umrahBtnPopup} setTrigger={setUmrahBtnPopup}>
+            {/* <UmrahPopUp trigger={umrahBtnPopup} setTrigger={setUmrahBtnPopup}>
               <p className="text-white py-5">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis,
                 delectus repellat officia similique sunt perspiciatis saepe
@@ -86,7 +86,7 @@ const Header = () => {
                 delectus repellat officia similique sunt perspiciatis saepe
                 accusantium dolorem placeat quae.
               </p>
-            </UmrahPopUp>
+            </UmrahPopUp> */}
           </div>
         </div>
       </div>
