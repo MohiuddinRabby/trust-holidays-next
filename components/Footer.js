@@ -119,7 +119,7 @@ const Footer = () => {
           <div className="row">
             <div className="col-lg-12 col-md-12 col-sm-12 text-center space-texts-two">
               <h6 className="second-footer">powered by</h6>
-              <h5 className="second-footer">trust info tech &copy;2022</h5>
+              <h5 className="second-footer">trust info tech &copy;2023</h5>
             </div>
           </div>
         </div>

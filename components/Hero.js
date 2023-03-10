@@ -12,7 +12,11 @@ import OnlineApplication from "../public/img/steps-for-visa/online-application.p
 import Payment from "../public/img/steps-for-visa/payment.png";
 import VisaImg from "../public/img/steps-for-visa/visa.png";
 import { useRouter } from "next/router";
-import { getCountries, getVisaCategories } from "../pages/api/trustApis";
+import {
+  getCitizen,
+  getCountries,
+  getVisaCategories,
+} from "../pages/api/trustApis";
 const validationSchema = Yup.object().shape({
   visaCategory: Yup.object().shape({
     value: Yup.string().required("please select value"),
@@ -20,11 +24,13 @@ const validationSchema = Yup.object().shape({
   }),
 });
 const initialValues = {
-  citizenOf: "Bangladesh",
+  citizenOf: "",
   countryName: "",
   visaCategory: "",
 };
 const Hero = () => {
+  // citizen api state
+  const [citizen, setCitizen] = useState();
   // country api state
   const [countryList, setCountry] = useState();
   // visa category api state
@@ -38,9 +44,9 @@ const Hero = () => {
   };
   // router
   const router = useRouter();
-  // selected country as Bangladesh
-  const selectedCitizenOf = { value: 1, label: "Bangladesh" };
+
   useEffect(() => {
+    getCitizen(setCitizen);
     getCountries(setCountry);
     getVisaCategories(setVisaCategories);
   }, []);
@@ -114,7 +120,6 @@ const Hero = () => {
                       router.push({
                         pathname: "/requirementDetails",
                         query: {
-                          citizenOf: "Bangladesh",
                           countryID: values?.countryName?.value,
                           countryName: values?.countryName?.label,
                           visaCategoryID: values?.visaCategory?.value,
@@ -138,11 +143,16 @@ const Hero = () => {
                             <div className="row">
                               <div className="col-lg-4">
                                 <label>I am a citizen of</label>
-                                <Field
-                                  className="form-control"
+                                <Select
                                   name="citizenOf"
+                                  styles={customStyles}
+                                  onChange={(valueOption) => {
+                                    setFieldValue("citizenOf", valueOption);
+                                  }}
                                   value={values?.citizenOf}
-                                  disabled={true}
+                                  options={citizen}
+                                  errors={errors}
+                                  placeholder="Citizen"
                                 />
                               </div>
                               <div className="col-lg-4">
